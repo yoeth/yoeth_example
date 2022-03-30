@@ -1,13 +1,14 @@
-const VERSION = "0.0.2";   //  Yoeth 版本
-const HOSTNAME = "127.0.0.1";   //  Yoeth 运行域名
-const PORT = 8844;   //  Yoeth 运行端口
+import { parse } from "https://deno.land/std/encoding/yaml.ts";
 
-try {
-    const MODULE = await import(`https://deno.land/x/yoeth@${VERSION}/lib/core/app.js`);
-    new MODULE.App().start({ port: PORT, hostname: HOSTNAME });
-} catch (error) {
-    console.error(error.message);
-}
+const DATA = await Deno.readTextFile("./config.yml");
+const CONFIG = parse(DATA);
+const CORE = await import(
+  `https://deno.land/x/yoeth@${CONFIG.version}/lib/core/app.js`
+);
+new CORE.App().start({
+  port: CONFIG.port,
+  hostname: CONFIG.hostname,
+  plugins: CONFIG.plugins,
+});
 
-
-// deno run --allow-net --allow-read start.js
+// 关于启动的命令: deno task start
