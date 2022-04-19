@@ -1,5 +1,6 @@
-export default function log({ data, bot, config }) {
+export function apply({ data, bot, config }) {
     console.log(data)
 }
 
-export let type = "notice";
+export const type = "notice";
+export const name = "log";

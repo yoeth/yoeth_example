@@ -1,13 +1,11 @@
 import { parse } from "https://deno.land/std/encoding/yaml.ts";
 
-const DATA = await Deno.readTextFile("./config.yml");
-const CONFIG = parse(DATA);
-const CORE = await import(
-  `https://deno.land/x/yoeth@${CONFIG.version}/lib/core/app.js`
+const CONFIG = parse(await Deno.readTextFile("./yoeth.yml"));
+const YOETH = await import(
+  `https://deno.land/x/yoeth@${CONFIG.version}/lib/mod.js`
 );
-new CORE.App().start({
-  port: CONFIG.port,
-  hostname: CONFIG.hostname,
+new YOETH.App().start({
+  bots: CONFIG.bots,
   plugins: CONFIG.plugins,
 });
 
