@@ -1,5 +1,5 @@
-export function apply({ data, bot, config }) {
-    console.log(data)
+export function apply({ session, config }) {
+    console.log(session)
 }
 
 export const type = "notice";

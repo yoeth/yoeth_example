@@ -1,4 +1,4 @@
-version: 0.0.6 # Yoeth 版本
+version: 0.1.0 # Yoeth 版本
 bots:
   - self_id: ~ # 机器人的账号（默认为空，为空时部分功能可能无法正常使用）
     protocol: # 通信协议配置
@@ -10,13 +10,16 @@ bots:
       websocket_rev: # 反向 WebsScket 配置（OneBot 协议实现端访问应用端）
         - host: 127.0.0.1 # 监听 IP
           port: 8844 # 监听端口
-          access_token: ~ # 访问令牌（可选，默认为空）
-          disable: false # 此处为 true 时禁用
+          access_token: ~
+          disable: false
     disable: false # 此处为 true 时禁用
 plugins:
   - path: ./plugin/ping.js # 插件地址（支持网络地址）
     disable: false # 此处为 true 时禁用
     config: ~ # 自定义选项（默认为空）
-  - path: ./plugin/log.js # 插件地址（支持网络地址）
-    disable: false # 此处为 true 时禁用
-    config: ~ # 自定义选项（默认为空）
+  - path: ./plugin/log.js
+    disable: false
+    config: ~
+  - path: ./plugin/ping2.js
+    disable: false
+    config: ~
