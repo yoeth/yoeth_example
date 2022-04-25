@@ -1,4 +1,4 @@
-version: 0.1.0 # Yoeth 版本
+version: 0.1.1 # Yoeth 版本
 bots:
   - self_id: ~ # 机器人的账号（默认为空，为空时部分功能可能无法正常使用）
     protocol: # 通信协议配置
