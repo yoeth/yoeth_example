@@ -1,10 +1,10 @@
 export const name = 'ping2'
 export const type = 'ctx'
 
-export function apply({context, config, segment}) {
+export function apply({ context, config, segment }) {
     context.middleware(async (session, next) => {
-        if (session.content === '水亦载舟') {
-            // 如果收到“水亦载舟”，就回应“亦能覆舟”
+        if (session.content === '水能载舟') {
+            // 如果收到“水能载舟”，就回应“亦能覆舟”
             // 我们可以直接发送纯文本
             return '亦能覆舟'
         } else if (session.content === '114') {
