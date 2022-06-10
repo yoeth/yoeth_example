@@ -6,7 +6,7 @@ bots: # 各个 Bot 的配置
       host: 127.0.0.1
       port: 8844
 plugins: # 插件配置
-  - path: ./plugin/ping.js # 插件地址 (支持网络地址)
+  - path: ./plugin/me.js # 插件地址 (支持网络地址)
     config: ~ # 传递给插件的选项 (默认为空)
   - path: ./plugin/hello.ts
     config: ~
