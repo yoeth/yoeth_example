@@ -1,4 +1,4 @@
-import { Context } from 'https://deno.land/x/yoeth@0.2.0/mod.ts'
+import type { Context } from 'https://deno.land/x/yoeth@0.2.0/mod.ts'
 
 export function apply(ctx: Context, config: any) {
     ctx.on('message', async (session) => {
